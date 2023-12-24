@@ -1,0 +1,65 @@
+.tabs{
+    font-size: 20px;
+
+}
+.tabPanel{
+    background-color: rgba(111, 196, 236, 0.108); 
+
+}
+.description{
+    padding: 2%;
+    color: rgb(36 111 172);
+}
+.titleTab{
+    font-size: 50px;
+    text-decoration:dashed;
+}
+.descTab{
+    font-size: 35px;
+
+}
+.imgService{
+    width: 60%;
+}
+.tabInfo{
+    display: flex;
+}
+.tabInfo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .titleTab {
+    animation: floatingLeftAnimation 1s forwards;
+  }
+  
+  .descTab {
+    animation: floatingRightAnimation 1s forwards;
+  }
+  
+  .imgService {
+    animation: floatingLeftAnimation 1s forwards;
+  }
+  
+  @keyframes floatingLeftAnimation {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes floatingRightAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

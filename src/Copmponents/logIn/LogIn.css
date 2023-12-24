@@ -1,0 +1,32 @@
+.formDiv {
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 30%;
+    height: 300px;
+  }
+  
+.inputs{
+    width: 80%;
+}
+.loginDiv{
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+#formLogin{
+    height: 250px;
+    width: 250px;
+}

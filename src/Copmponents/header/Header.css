@@ -1,0 +1,39 @@
+header {
+   background-color: rgb(54 181 241 / 26%); 
+   padding:20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+  }
+  .infoDiv{
+    display: flex;
+        
+  }
+  .logo {
+    margin-right: 20px;
+  }
+  
+  .logo img {
+    height: 80px;
+  }
+  
+  .business-details h1 {
+    margin: 0;
+    font-size: 40px;
+    color:#246fac;
+
+  }
+  
+  .business-details p {
+    margin: 5px 0 0;
+    font-size: 25px;
+    color: #888;
+  }
+  .buttonsDiv{
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+    
+  }
+  
