@@ -4,10 +4,12 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
-import Button from '@mui/material/Button';
-import InsertInvitationIcon from '@mui/icons-material/InsertInvitation';
+
 import { servicesList } from '../../stores/ServicesStore';
 import './ServicesTabs.css'
+import GlobalStore from '../../stores/GlobalStore';
+import AddNewMeeting from '../addNewMeeting/AddNewMeeting';
+
 function ServicesTabs() {
 
     const [value, setValue] = useState(0);
@@ -21,7 +23,7 @@ function ServicesTabs() {
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <TabList onChange={handleChange} aria-label="lab API tabs example">
                             {servicesList.map((item, index) => (
-                                <Tab label={item.name} value={index} key={index} className='tabs'/>
+                                <Tab label={item.name} value={index} key={index} className='tabs' />
                             ))}
 
                         </TabList>
@@ -29,18 +31,19 @@ function ServicesTabs() {
                     </Box>
                     <>
                         {servicesList.map((item, index) => (
-                            <TabPanel value={index} className='tabPanel'  key={index} >
+                            <TabPanel value={index} className='tabPanel' key={index} >
 
                                 <div className='tabInfo'>
 
-                                <div className='description'>
-                                <Button variant="outlined"  >Let's talk about it...<InsertInvitationIcon/> </Button>
+                                    <div className='description'>
+                                        {!GlobalStore.isLogin && <AddNewMeeting></AddNewMeeting>}
 
-                                <p className='titleTab'>{item.name}</p>
-                                <p className='descTab'>{item.description}</p>
 
-                                </div>
-                                <img src={item.imgService} className='imgService' />
+                                        <p className='titleTab'>{item.name}</p>
+                                        <p className='descTab'>{item.description}</p>
+
+                                    </div>
+                                    <img src={item.imgService} className='imgService' />
                                 </div>
                             </TabPanel>
 

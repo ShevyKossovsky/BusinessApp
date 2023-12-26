@@ -34,7 +34,6 @@ function LogIn() {
       timer: 1500
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = "http://localhost:8787/login";
@@ -49,7 +48,6 @@ function LogIn() {
         faildLogin();
       });
   };
-
 
   return (
     <>
@@ -75,7 +73,7 @@ function LogIn() {
             label="password"
             type="password"
             autoComplete="current-password"
-            required
+            required         
             variant="outlined"
             onChange={(p) => setPassword(p.target.value)}
 

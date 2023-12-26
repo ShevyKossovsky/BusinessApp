@@ -6,19 +6,24 @@ import GlobalStore from '../../stores/GlobalStore'
 import LogIn from '../logIn/LogIn'
 import Header from '../Header/Header'
 import BusinessAdmin from '../businessAdmin/BusinessAdmin'
-
+import EditDetails from '../editDetails/EditDetails'
+import './Admin.css'
 const Admin = (observer(() => {
 
   return (
     <>
-      <Header/>
+      <Header />
       {!GlobalStore.isLogin ?
         <LogIn /> :
-       <BusinessAdmin/>
+        <BusinessAdmin />
+      }
+      { 
+        GlobalStore.isEdit && <EditDetails/>
       }
 
 
-      <Footer/>
+
+      <Footer />
     </>
   )
 }))

@@ -12,6 +12,8 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import QrCode2Icon from '@mui/icons-material/QrCode2';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 
 export default function Footer() {
@@ -55,6 +57,11 @@ export default function Footer() {
                     <TwitterIcon className='socialmediaIcon'></TwitterIcon>
                     <InstagramIcon className='socialmediaIcon'></InstagramIcon>
                     <QrCode2Icon className='socialmediaIcon'></QrCode2Icon>
+                    <FacebookIcon className='socialmediaIcon'></FacebookIcon>
+                    <WhatsAppIcon className='socialmediaIcon'></WhatsAppIcon>
+
+
+
                 </div>
 
                 <div className='newsletter'>

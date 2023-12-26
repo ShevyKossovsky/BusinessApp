@@ -9,9 +9,11 @@ import Alert from '@mui/material/Alert';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { observer } from "mobx-react";
 import GlobalStore from '../../stores/GlobalStore'
-import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded';
-import EditDetails from '../editDetails/EditDetails'
-import { IconButton } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import Fab from '@mui/material/Fab';
+import EditDetails from '../editDetails/EditDetails';
+
+
 const Header = (observer(() => {
     return (
 
@@ -26,13 +28,12 @@ const Header = (observer(() => {
                         <h1>{businessStore.businessDetails.name}</h1>
                         <p>{businessStore.businessDetails.address} | {businessStore.businessDetails.email}</p>
 
-                    </div>
 
+                    </div>
+                    {GlobalStore.isLogin &&
+                        <EditDetails></EditDetails>
+                    }
                 </div>
-                {GlobalStore.isLogin &&
-                    <IconButton aria-label="delete" color="primary" className='editButton' onClick={() => { GlobalStore.setIsEdit(true) }}>
-                        <ModeEditOutlineRoundedIcon ></ModeEditOutlineRoundedIcon>
-                    </IconButton>}
 
 
                 <div className='buttonsDiv'>
@@ -48,9 +49,6 @@ const Header = (observer(() => {
 
                 </div>
 
-                {
-                    GlobalStore.isEdit && <EditDetails />
-                }
 
 
             </header>

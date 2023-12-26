@@ -29,6 +29,6 @@ export class service {
     imgService;
 }
 
-const addService = (service) => {
-    servicesList = [...servicesList, service];
-}
+// const addService = (service) => {
+//     servicesList = [...servicesList, service];
+// }

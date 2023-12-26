@@ -8,7 +8,11 @@ header {
   }
   .infoDiv{
     display: flex;
-        
+    justify-content: space-around;
+    width: 70%;
+    align-items: center;
+
+
   }
   .logo {
     margin-right: 20px;
