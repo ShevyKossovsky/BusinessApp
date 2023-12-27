@@ -1,4 +1,5 @@
 
+import MeetingsStore from '../../stores/MeetingsStore';
 import Header from '../Header/Header';
 import Footer from '../footer/Footer';
 import ServicesTabs from '../servicesTabs/ServicesTabs';
@@ -14,9 +15,11 @@ export default function Costumer() {
 
   return (
     <>
-      <Header/>
+      <Header />
       <ServicesTabs></ServicesTabs>
-      <Footer></Footer>
+
+
+<Footer></Footer>
     </>
   );
 }

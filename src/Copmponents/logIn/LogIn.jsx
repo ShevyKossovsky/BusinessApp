@@ -39,7 +39,6 @@ function LogIn() {
     const url = "http://localhost:8787/login";
     axios.post(url, { name: userName, password: password })
       .then((response) => {
-        console.log(response.data);
         GlobalStore.setIsLogin(true);
         successLogin();
       })

@@ -3,12 +3,13 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { servicesList } from '../../stores/ServicesStore';
 import './ServicesTabs.css'
 import GlobalStore from '../../stores/GlobalStore';
 import AddNewMeeting from '../addNewMeeting/AddNewMeeting';
+import ServicesStore from '../../stores/ServicesStore';
+import MeetingsStore from '../../stores/MeetingsStore';
 
 function ServicesTabs() {
 
@@ -16,13 +17,15 @@ function ServicesTabs() {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    
     return (
         <>
             <Box sx={{ width: '100%', typography: 'body1' }}>
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <TabList onChange={handleChange} aria-label="lab API tabs example">
-                            {servicesList.map((item, index) => (
+                            {ServicesStore.servicesList.map((item, index) => (
                                 <Tab label={item.name} value={index} key={index} className='tabs' />
                             ))}
 
@@ -30,13 +33,13 @@ function ServicesTabs() {
 
                     </Box>
                     <>
-                        {servicesList.map((item, index) => (
+                        {ServicesStore.servicesList.map((item, index) => (
                             <TabPanel value={index} className='tabPanel' key={index} >
 
                                 <div className='tabInfo'>
 
                                     <div className='description'>
-                                        {!GlobalStore.isLogin && <AddNewMeeting></AddNewMeeting>}
+                                        {!GlobalStore.isLogin && <AddNewMeeting selectedService={item}></AddNewMeeting>}
 
 
                                         <p className='titleTab'>{item.name}</p>
@@ -46,12 +49,15 @@ function ServicesTabs() {
                                     <img src={item.imgService} className='imgService' />
                                 </div>
                             </TabPanel>
-
+ 
                         ))}
                     </>
 
                 </TabContext>
             </Box>
+
+            
+         
         </>
 
 

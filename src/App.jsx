@@ -1,13 +1,14 @@
 
 import './App.css'
 import Costumer from './Copmponents/costumers/Costumers'
-import Header from './Copmponents/header/Header'
+import MeetingsStore from './stores/MeetingsStore'
 
 function App() {
 
   return (
     <>
-    <Costumer></Costumer>
+      <Costumer></Costumer>
+   
     </>
   )
 }
