@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import React from 'react';
+import React, { useEffect } from 'react';
 import './header.css';
 import logo_image from '../../assets/images/save_logo.png';
 import CallIcon from '@mui/icons-material/Call';
@@ -12,13 +12,15 @@ import GlobalStore from '../../stores/GlobalStore'
 import EditIcon from '@mui/icons-material/Edit';
 import Fab from '@mui/material/Fab';
 import EditDetails from '../editDetails/EditDetails';
+import BusinessStore from '../../stores/BusinessStore';
 
 
 const Header = (observer(() => {
+
     return (
 
         <>
-            <header>
+            <div className='headerDiv'>
                 <div className='infoDiv'>
                     <div className="logo">
                         <img src={logo_image} />
@@ -26,9 +28,8 @@ const Header = (observer(() => {
 
                     <div className="business-details">
                         <h1>{businessStore.businessDetails.name}</h1>
+                        <h3>{businessStore.businessDetails.description}</h3>
                         <p>{businessStore.businessDetails.address} | {businessStore.businessDetails.email}</p>
-
-
                     </div>
                     {GlobalStore.isLogin &&
                         <EditDetails></EditDetails>
@@ -51,7 +52,7 @@ const Header = (observer(() => {
 
 
 
-            </header>
+            </div>
 
 
 

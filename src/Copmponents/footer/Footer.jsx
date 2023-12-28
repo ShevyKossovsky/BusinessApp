@@ -14,12 +14,16 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import QrCode2Icon from '@mui/icons-material/QrCode2';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { useEffect } from 'react';
+import BusinessStore from '../../stores/BusinessStore';
+import { observer } from "mobx-react";
 
 
-export default function Footer() {
+
+ const Footer=(observer(()=> {
 
 
-
+   
     return (
 
         <>
@@ -86,4 +90,5 @@ export default function Footer() {
 
 
 
-}
+}))
+export default Footer

@@ -9,7 +9,7 @@ import './ServicesTabs.css'
 import GlobalStore from '../../stores/GlobalStore';
 import AddNewMeeting from '../addNewMeeting/AddNewMeeting';
 import ServicesStore from '../../stores/ServicesStore';
-import MeetingsStore from '../../stores/MeetingsStore';
+
 
 function ServicesTabs() {
 
@@ -28,9 +28,7 @@ function ServicesTabs() {
                             {ServicesStore.servicesList.map((item, index) => (
                                 <Tab label={item.name} value={index} key={index} className='tabs' />
                             ))}
-
                         </TabList>
-
                     </Box>
                     <>
                         {ServicesStore.servicesList.map((item, index) => (
@@ -39,7 +37,7 @@ function ServicesTabs() {
                                 <div className='tabInfo'>
 
                                     <div className='description'>
-                                        {!GlobalStore.isLogin && <AddNewMeeting selectedService={item}></AddNewMeeting>}
+                                        {!GlobalStore.isLogin && <AddNewMeeting service={item}></AddNewMeeting>}
 
 
                                         <p className='titleTab'>{item.name}</p>
@@ -54,25 +52,9 @@ function ServicesTabs() {
                     </>
 
                 </TabContext>
-            </Box>
-
-            
-         
+            </Box>        
         </>
 
-
-
     )
-
-
-
-
-
-
-
-
-
-
-
 }
 export default ServicesTabs

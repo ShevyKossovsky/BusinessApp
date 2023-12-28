@@ -7,7 +7,6 @@ import Swal from 'sweetalert2';
 import { Validator } from "react";
 import Footer from "../footer/Footer";
 import Admin from "../Admin/Admin";
-import Header from '../Header/Header';
 import axios from "axios";
 import GlobalStore from '../../stores/GlobalStore';
 
