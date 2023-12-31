@@ -16,7 +16,9 @@ import BusinessStore from '../../stores/BusinessStore';
 
 
 const Header = (observer(() => {
-
+    useEffect(() => {
+        BusinessStore.initialBusinessDetails()
+      }, []);
     return (
 
         <>
@@ -27,9 +29,9 @@ const Header = (observer(() => {
                     </div>
 
                     <div className="business-details">
-                        <h1>{businessStore.businessDetails.name}</h1>
-                        <h3>{businessStore.businessDetails.description}</h3>
-                        <p>{businessStore.businessDetails.address} | {businessStore.businessDetails.email}</p>
+                        <h1>{businessStore.data.name}</h1>
+                        <h3>{businessStore.data.description}</h3>
+                        <p>{businessStore.data.address} | {businessStore.data.email}</p>
                     </div>
                     {GlobalStore.isLogin &&
                         <EditDetails></EditDetails>
@@ -38,7 +40,7 @@ const Header = (observer(() => {
 
 
                 <div className='buttonsDiv'>
-                    <Button variant="outlined"> {businessStore.businessDetails.phone} <CallIcon></CallIcon></Button>
+                    <Button variant="outlined"> {businessStore.data.phone} <CallIcon></CallIcon></Button>
                     {
                         !GlobalStore.isLogin ?
                             <Button variant="outlined" href='/admin'> login <LoginIcon /> </Button>

@@ -1,19 +1,22 @@
-
+import { observer } from "mobx-react";
 import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import AddIcon from '@mui/icons-material/Add';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import IconButton from '@mui/material/IconButton';
+import './AddNewService.css'
 import CloseIcon from '@mui/icons-material/Close';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
-import './EditDetails.css'
 import BusinessStore from '../../stores/BusinessStore';
 import Swal from 'sweetalert2';
-import { observer } from 'mobx-react';
+import ServicesStore from "../../stores/ServicesStore";
+import imgForService from '../../assets/images/realtor-with-money-wooden-house.jpg'
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
     clipPath: 'inset(50%)',
@@ -34,22 +37,15 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
         padding: theme.spacing(1),
     },
 }));
+const AddNewService = (observer(() => {
 
-const EditDetails = (observer(() => {
-
-    useEffect(() => {
-        BusinessStore.initialBusinessDetails()
-    }, []);
-
-    const [localBusinessDetails, setLocalBusinessDetails] = useState(BusinessStore.data);
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
-        name: localBusinessDetails.name,
-        address: localBusinessDetails.address,
-        email: localBusinessDetails.email,
-        phone: localBusinessDetails.phone,
-        owner: localBusinessDetails.owner,
-        description: localBusinessDetails.description,
+        name: '',
+        description: '',
+        price: '',
+        imgService: imgForService
+
     });
 
     const handleClickOpen = () => {
@@ -72,9 +68,6 @@ const EditDetails = (observer(() => {
         e.preventDefault();
         handleClose();
 
-
-
-
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -87,27 +80,25 @@ const EditDetails = (observer(() => {
             if (result.isConfirmed) {
                 Swal.fire({
                     title: 'Great!',
-                    text: 'Your changes was successfully set!',
+                    text: 'Your service was successfully added!',
                     icon: 'success',
                 });
-                console.log(formData.dateTime)
-                BusinessStore.changeBusinessDetails(formData);
 
-
+                ServicesStore.addService(formData)
             }
         });
 
 
     };
-
     return (
+
         <>
             <Fab color="primary" aria-label="edit" onClick={handleClickOpen}>
-                <EditIcon />
+                <AddIcon />
             </Fab>
             <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
                 <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-                    Business Details
+                    New Service
                 </DialogTitle>
                 <IconButton
                     aria-label="close"
@@ -121,10 +112,10 @@ const EditDetails = (observer(() => {
                 >
                     <CloseIcon />
                 </IconButton>
-                <form className="formDiv" id="formForEdit" onSubmit={handleSubmit}>
+                <form className="formDiv" id="formForAdd" onSubmit={handleSubmit}>
                     <TextField
                         id="outlined-basic"
-                        label="Business Name"
+                        label="Service name"
                         variant="outlined"
                         defaultValue={formData.name}
                         className="inputs"
@@ -132,7 +123,7 @@ const EditDetails = (observer(() => {
                     />
                     <TextField
                         id="outlined-basic"
-                        label="Business Description"
+                        label="service description"
                         variant="outlined"
                         defaultValue={formData.description}
                         className="inputs"
@@ -141,55 +132,27 @@ const EditDetails = (observer(() => {
 
                     <TextField
                         id="outlined-basic"
-                        label="business address"
+                        label="serivce price"
                         variant="outlined"
-                        defaultValue={formData.address}
+                        defaultValue={formData.price}
                         className="inputs"
-                        onChange={(event) => handleInputChange(event, 'address')}
-
-
-                    />  <TextField
-                        id="outlined-basic"
-                        label="business email"
-                        variant="outlined"
-                        defaultValue={formData.email}
-                        className="inputs"
-                        type='email'
-                        onChange={(event) => handleInputChange(event, 'email')}
+                        onChange={(event) => handleInputChange(event, 'price')}
 
 
                     />
-                    <TextField
-                        id="outlined-basic"
-                        label="business phone"
-                        variant="outlined"
-                        defaultValue={formData.phone}
-                        className="inputs"
-                        onChange={(event) => handleInputChange(event, 'phone')}
-
-
-                    />
-                    <TextField
-                        id="outlined-basic"
-                        label="business owner"
-                        variant="outlined"
-                        defaultValue={formData.owner}
-                        className="inputs"
-                        onChange={(event) => handleInputChange(event, 'owner')}
-
-
-                    />
-
-                    <Button component="label" variant="contained" endIcon={<FileUploadIcon />}>
-                        Upload Logo
-                        <VisuallyHiddenInput type="file" />
-                    </Button>
                     <Button autoFocus type="submit">
-                        Save Changes
+                        Add service
                     </Button>
                 </form>
             </BootstrapDialog>
+
+
+
+
+
         </>
-    );
+    )
+
 }))
-export default EditDetails
+
+export default AddNewService

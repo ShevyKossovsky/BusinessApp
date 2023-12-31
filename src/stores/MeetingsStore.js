@@ -14,83 +14,55 @@ const meeting = {
 }
 class MeetingsStore {
 
-    data = observable([
-        {
-            serviceName: 'Mortage',
-            serviceDescription: 'blablabla',
-            servicePrice: '500',
-            dateTime: '02/4/2024',
-            clientName: 'Shevy',
-            clientPhone: '0556773361',
-            clientEmail: 's055677336@gmail.com'
-        },
-        {
-            serviceName: 'Mortage',
-            serviceDescription: 'blablabla',
-            servicePrice: '200',
-            dateTime: '02/1/2024',
-            clientName: 'Ruthy klein',
-            clientPhone: '0556773361',
-            clientEmail: 's055677336@gmail.com'
-        },
-    ]);
+    data = [];
 
     constructor() {
         makeObservable({
             data: observable,
-            getMeetings: computed,
             addMeeting: action,
-            initialMeettingList: action
+            initialMeetingsList: action,
 
         })
     }
 
-    initialMeettingList = async () => {
+    addMeeting = async (newMeeting) => {
+        const response = await fetch("http://localhost:8787/appointment", {
+            method: "POST",
+            body: JSON.stringify(newMeeting),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        if (response.ok) {
+            this.data = ([...this.data, newMeeting])
+            Swal.fire({
+                title: "Your meeting was successfully added!",
+                icon: "success"
+            });
+        }
+
+        else {
+
+            Swal.fire({
+                title: "The meeting cannot be scheduled!",
+                text:'The date/time is already taken',
+                icon: 'error'
+            });
+        }
+
+    }
+    initialMeetingsList = async () => {
         const response = await fetch("http://localhost:8787/appointments");
         const data = await response.json();
+        console.log(data);
         const sortedData = [...data].sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
-        this.meettingList = sortedData;
+        this.data = sortedData;
+    };
 
-    }
 
-    addMeeting = async (meeting) => {
-        try {
-            const response = await fetch("http://localhost:8787/appointment", {
-                method: "POST",
-                body: JSON.stringify(meeting),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-            if (response.status === 200) {
-                this.data = ([...this.data, meeting])
-                Swal.fire({
-                    title: "An meeting has been made",
-                    text: "Your details have been successfully entered!",
-                    icon: "success"
-                });
-            }
-            else {
-                console.log("error, the meethinf...")
-                Swal.fire({
-                    title: 'Error',
-                    text: 'The date or time is already taken...',
-                    icon: "error"
-                });
-            }
-        } catch (error) {
-            console.log("error, the meethinf...")
-            Swal.fire({
-                title: 'Error',
-                text: 'The date or time is already taken...',
-                icon: "error"
-            });
 
-        }
-    }
-    get meetingsList() {
-        return this.data;
-    }
+
+
 
 }
 

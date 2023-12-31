@@ -12,18 +12,17 @@ const Admin = (observer(() => {
 
   return (
     <>
+      {
+        GlobalStore.isEdit && <EditDetails />
+      }
+
       <Header />
       {!GlobalStore.isLogin ?
         <LogIn /> :
         <BusinessAdmin />
       }
-      { 
-        GlobalStore.isEdit && <EditDetails/>
-      }
-
-
-
       <Footer />
+      
     </>
   )
 }))

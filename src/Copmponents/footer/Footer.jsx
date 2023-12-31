@@ -20,10 +20,10 @@ import { observer } from "mobx-react";
 
 
 
- const Footer=(observer(()=> {
+const Footer = (observer(() => {
 
 
-   
+
     return (
 
         <>
@@ -34,11 +34,11 @@ import { observer } from "mobx-react";
                     <img src={logo_image} />
                 </div>
                 <div className='details'>
-                    <p className='pDetails'><CallIcon></CallIcon>{businessStore.businessDetails.phone} </p>
+                    <p className='pDetails'><CallIcon></CallIcon>{businessStore.data.phone} </p>
                     <div className='line'></div>
-                    <p className='pDetails'><EmailIcon></EmailIcon>{businessStore.businessDetails.email}</p>
+                    <p className='pDetails'><EmailIcon></EmailIcon>{businessStore.data.email}</p>
                     <div className='line'></div>
-                    <p className='pDetails'><LocationOnIcon></LocationOnIcon> {businessStore.businessDetails.address}</p>
+                    <p className='pDetails'><LocationOnIcon></LocationOnIcon> {businessStore.data.address}</p>
 
                 </div>
 
@@ -47,9 +47,9 @@ import { observer } from "mobx-react";
                     <ul>
                         <li>What are prohibited statements and assertion of rights?</li>
                         <li>Mortgage for Amidar apartment</li>
-                     
+
                         <li>What is the relationship between a credit rating and a mortgage?</li>
-                     
+
                         <li>How do we know for what amount we can buy an apartment?</li>
                         <li>Bank of Israel restrictions on accepting a mortgage</li>
                     </ul>
@@ -81,7 +81,9 @@ import { observer } from "mobx-react";
 
             </div>
 
-
+            <div className="rights">
+                © 2024 Shevy kossovsky All rights reserved
+            </div>
 
 
         </>

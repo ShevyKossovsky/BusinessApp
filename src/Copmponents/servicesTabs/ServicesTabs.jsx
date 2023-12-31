@@ -4,15 +4,19 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useEffect, useState } from 'react';
-
 import './ServicesTabs.css'
 import GlobalStore from '../../stores/GlobalStore';
 import AddNewMeeting from '../addNewMeeting/AddNewMeeting';
 import ServicesStore from '../../stores/ServicesStore';
+import MeetingsStore from '../../stores/MeetingsStore';
+import { observer } from 'mobx-react';
 
 
-function ServicesTabs() {
+const ServicesTabs=(observer(()=> {
 
+    useEffect(() => {
+        ServicesStore.initialServicesList();
+      },[])
     const [value, setValue] = useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -39,7 +43,6 @@ function ServicesTabs() {
                                     <div className='description'>
                                         {!GlobalStore.isLogin && <AddNewMeeting service={item}></AddNewMeeting>}
 
-
                                         <p className='titleTab'>{item.name}</p>
                                         <p className='descTab'>{item.description}</p>
 
@@ -56,5 +59,5 @@ function ServicesTabs() {
         </>
 
     )
-}
+}))
 export default ServicesTabs

@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { TextField, Button, DialogActions, DialogTitle, Dialog } from '@mui/material';
-// import { formatISO, parseISO } from 'date-fns';
 import './AddNewMeeting.css';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -11,13 +10,19 @@ import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRou
 import MeetingsStore from '../../stores/MeetingsStore';
 import { observer } from 'mobx-react';
 const AddNewMeeting = (observer(({ service }) => {
+    // useEffect(() => {
+    //     MeetingsStore.initialMeetingsList()
+    // }, []);
 
     const [formData, setFormData] = useState({
+        name: service.name,
+        description: service.description,
+        price: service.price,
         clientName: '',
         clientPhone: '',
         clientEmail: '',
         dateTime: null,
-    }, []);
+    });
     const handleInputChange = (e) => {
         setFormData((prevData) => ({
             ...prevData,
@@ -34,12 +39,6 @@ const AddNewMeeting = (observer(({ service }) => {
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData.clientEmail);
-        console.log(formData.clientName);
-        console.log(formData.clientPhone);
-        console.log(formData.dateTime);
-        console.log(service.name);
-        console.log(service.id);
         MeetingsStore.addMeeting(formData);
         setFormData((prevData) => ({
             ...prevData,
@@ -78,7 +77,7 @@ const AddNewMeeting = (observer(({ service }) => {
                     <TextField
                         id="outlined-disabled"
                         label="name"
-                        defaultValue={service.name}
+                        defaultValue={formData.name}
                         variant="outlined"
                         className="inputs"
                         fullWidth
@@ -88,7 +87,7 @@ const AddNewMeeting = (observer(({ service }) => {
                     <TextField
                         id="outlined-disabled"
                         label="description"
-                        defaultValue={service.description}
+                        defaultValue={formData.description}
                         variant="outlined"
                         className="inputs"
                         sx={{ mb: 3 }}
@@ -98,7 +97,7 @@ const AddNewMeeting = (observer(({ service }) => {
                     <TextField
                         id="outlined-disabled"
                         label="price"
-                        defaultValue={service.price}
+                        defaultValue={formData.price}
                         variant="outlined"
                         className="inputs"
                         sx={{ mb: 3 }}

@@ -14,12 +14,13 @@ export class BusinessStore {
   constructor() {
     makeObservable(this, {
       data: observable,
-      businessDetails: computed,
-      initialBusinessDetails:action,
-      changeBusinessDetails:action,
-      
+      changeBusinessDetails: action,
+      initialBusinessDetails: action
+
     });
+    this.changeBusinessDetails(this.data)
   }
+
 
   changeBusinessDetails = async (details) => {
     const response = await fetch("http://localhost:8787/businessData", {
@@ -29,20 +30,20 @@ export class BusinessStore {
         "Content-Type": "application/json",
       },
     });
-  }
+    if (response.status === 200) {
+      this.data = details;
 
-
+    }
+  };
   initialBusinessDetails = async () => {
     const response = await fetch("http://localhost:8787/businessData");
     const data = await response.json();
     console.log(data);
     this.data = data;
-    console.log("businessDetails", this.businessDetails);
+    console.log("businessDetails", this.data);
   };
-  get businessDetails() {
-    return this.data;
-  }
-  
+
+
 }
 
 export default new BusinessStore();
