@@ -119,6 +119,7 @@ const AddNewService = (observer(() => {
                         variant="outlined"
                         defaultValue={formData.name}
                         className="inputs"
+                        required
                         onChange={(event) => handleInputChange(event, 'name')}
                     />
                     <TextField
@@ -127,6 +128,7 @@ const AddNewService = (observer(() => {
                         variant="outlined"
                         defaultValue={formData.description}
                         className="inputs"
+                        required
                         onChange={(event) => handleInputChange(event, 'description')}
                     />
 
@@ -136,6 +138,7 @@ const AddNewService = (observer(() => {
                         variant="outlined"
                         defaultValue={formData.price}
                         className="inputs"
+                        required
                         onChange={(event) => handleInputChange(event, 'price')}
 
 

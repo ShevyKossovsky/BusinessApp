@@ -45,3 +45,12 @@
     
   }
   
+@media(max-width:480px){
+  .headerDiv{
+    flex-direction: column;
+  }
+  .infoDiv{
+    flex-direction: column;
+
+  }
+}

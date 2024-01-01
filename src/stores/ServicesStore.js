@@ -31,6 +31,7 @@ class ServicesStore {
             id: '3',
             name: 'Mortgage cycle',
             description: 'One of the biggest advantages of working with us is the large network we have created of banks and financial institutions. This means that we work with all banks and all other financing bodies in the country, without exception, and thus we can provide you with a variety of different solutions with different advantages.',
+            price:'600',
             imgService: '../src/assets/images/Mortgage_thumbnail.jpg'
 
         }
@@ -70,12 +71,18 @@ class ServicesStore {
         console.log(response.statusText);
         if (response.ok) {
             this.servicesList = ([...this.servicesList, newService])
-
             Swal.fire({
                 title: "The service was successfully added ",
                 icon: "success",
             });
 
+        }
+        else{
+            Swal.fire({
+                title: "The service cannot be added ",
+                text:'A service with this name already exists in the system',
+                icon: 'error',
+            });
         }
 
     }

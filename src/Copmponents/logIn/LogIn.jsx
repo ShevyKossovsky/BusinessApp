@@ -38,6 +38,7 @@ function LogIn() {
     const url = "http://localhost:8787/login";
     axios.post(url, { name: userName, password: password })
       .then((response) => {
+        localStorage.setItem("isLogin", true)
         GlobalStore.setIsLogin(true);
         successLogin();
       })
@@ -71,7 +72,7 @@ function LogIn() {
             label="password"
             type="password"
             autoComplete="current-password"
-            required         
+            required
             variant="outlined"
             onChange={(p) => setPassword(p.target.value)}
 

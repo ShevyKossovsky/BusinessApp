@@ -1,6 +1,6 @@
 import { DatePicker, DateTimePicker } from '@mui/x-date-pickers';
 import { observable, computed, action, makeObservable, runInAction } from 'mobx';
-import { Observer } from 'mobx-react';
+import { Observer, observer } from 'mobx-react';
 import Swal from 'sweetalert2'
 
 const meeting = {
@@ -39,13 +39,14 @@ class MeetingsStore {
                 title: "Your meeting was successfully added!",
                 icon: "success"
             });
+
         }
 
         else {
 
             Swal.fire({
                 title: "The meeting cannot be scheduled!",
-                text:'The date/time is already taken',
+                text: 'The date/time is already taken',
                 icon: 'error'
             });
         }

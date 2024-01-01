@@ -12,17 +12,17 @@ import MeetingsStore from '../../stores/MeetingsStore';
 import { observer } from 'mobx-react';
 
 
-const ServicesTabs=(observer(()=> {
+const ServicesTabs = (observer(() => {
 
     useEffect(() => {
         ServicesStore.initialServicesList();
-      },[])
+    }, [])
     const [value, setValue] = useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
-    
+
     return (
         <>
             <Box sx={{ width: '100%', typography: 'body1' }}>
@@ -37,7 +37,7 @@ const ServicesTabs=(observer(()=> {
                     <>
                         {ServicesStore.servicesList.map((item, index) => (
                             <TabPanel value={index} className='tabPanel' key={index} >
-
+                            
                                 <div className='tabInfo'>
 
                                     <div className='description'>
@@ -50,12 +50,12 @@ const ServicesTabs=(observer(()=> {
                                     <img src={item.imgService} className='imgService' />
                                 </div>
                             </TabPanel>
- 
+
                         ))}
                     </>
 
                 </TabContext>
-            </Box>        
+            </Box>
         </>
 
     )

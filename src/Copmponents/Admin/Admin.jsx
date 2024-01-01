@@ -4,12 +4,18 @@ import { AdminPanelSettingsSharp } from '@mui/icons-material'
 import Footer from '../footer/Footer'
 import GlobalStore from '../../stores/GlobalStore'
 import LogIn from '../logIn/LogIn'
-import Header from '../Header/Header'
+import Header from '../header/Header'
+
 import BusinessAdmin from '../businessAdmin/BusinessAdmin'
 import EditDetails from '../editDetails/EditDetails'
 import './Admin.css'
+import { useEffect } from 'react'
 const Admin = (observer(() => {
-
+  useEffect(() => {
+    if (localStorage.getItem("isLogin") === "true") {
+      GlobalStore.setIsLogin(true)
+    }
+  }, []);
   return (
     <>
       {
@@ -21,8 +27,8 @@ const Admin = (observer(() => {
         <LogIn /> :
         <BusinessAdmin />
       }
-      <Footer />
-      
+      <Footer/>
+
     </>
   )
 }))

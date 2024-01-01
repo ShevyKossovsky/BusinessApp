@@ -18,7 +18,7 @@ const ServicesToAdmin = (observer(() => {
         ServicesStore.initialServicesList();
     }, [])
 
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState('1');
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -29,40 +29,40 @@ const ServicesToAdmin = (observer(() => {
 
 
         <>
-            <div className="tab">
-                <div>
-                    <AddNewService />
-                </div>
-                <div>
 
 
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'space-evenly' }}>
-                        {ServicesStore.servicesList.map((item, index) => (
-                            <Card sx={{ maxWidth: 345 }} index={index} key={index}>
-                                <CardActionArea>
-                                    <CardMedia
-                                        component="img"
-                                        height="140"
-                                        image={item.imgService}
-                                        alt={item.name}
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            {item.name}
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            {item.description}
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                                <CardActions>
-                                </CardActions>
-                            </Card>
-                        ))}
+            <AddNewService />
 
-                    </div>
+            <div>
+
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'space-evenly' }}>
+                    {ServicesStore.servicesList.map((item, index) => (
+                        <Card sx={{ maxWidth: 345 }} index={index} key={index}>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height="140"
+                                    image={item.imgService}
+                                    alt={item.name}
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {item.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {item.description}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            <CardActions>
+                            </CardActions>
+                        </Card>
+                    ))}
+
                 </div>
             </div>
+
         </>
     );
 

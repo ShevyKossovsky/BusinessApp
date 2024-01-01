@@ -175,6 +175,7 @@ const Meetings = observer(() => {
         MeetingsStore.initialMeetingsList();
     }, []);
 
+
     const [expanded, setExpanded] = useState('panel1');
 
     const handleChange = (panel) => (event, newExpanded) => {
@@ -210,6 +211,7 @@ const Meetings = observer(() => {
                 {MeetingsStore.data.length === 0 ? (
                     <div>no meetings to show</div>
                 ) : (
+
                     MeetingsStore.data.map((item, index) => (
                         <CustomAccordion
                             onChange={handleChange('panel1')}
@@ -220,7 +222,7 @@ const Meetings = observer(() => {
                                 id="panel1d-header"
                                 expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
                             >
-                                <Typography><p className={getColorClass(item.dateTime)}>Meeting {index + 1}: {item.dateTime}</p></Typography>
+                                <Typography><p >Meeting {index + 1}: {item.dateTime}</p></Typography>
                             </CustomAccordionSummary>
                             <CustomAccordionDetails className={getColorClass(item.dateTime)}>
                                 <Typography >
