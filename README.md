@@ -1,6 +1,5 @@
 # Application for managing a small business
 
-![Logo](link/to/logo.png)
 
 Welcome to our application for managing and controlling a small business. The application provides two main pages: one for users and one for the business owner.
 
@@ -54,7 +53,6 @@ markdown
 Copy code
 # Application for managing a small business
 
-![Logo](link/to/logo.png)
 
 Welcome to the application for managing and controlling a small business. The application provides two main pages: one for users and one for the business owner.
 
@@ -85,5 +83,5 @@ This app is intended for small business owners and customers, and provides impor
 ## Contact Us
 
 If you have any questions, suggestions or additional requirements, we are of course here to help. We have a support team to help with any problem or question.
-
+s0556773361@gmail.com
 Enjoying using the app!
