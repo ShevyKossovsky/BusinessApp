@@ -21,11 +21,6 @@ This application focuses on managing and upgrading the user experience of small 
 - **Staff management**: adding and managing employees and authorizing them.
 - **Analytical reports and data**: viewing reports and data that help in a better understanding of the business.
 
-## installation
-
-1. **Download the app**: Install the app on your device.
-2. **Authentication**: Log in using a username and password.
-
 ## Contact Us
 
 If you have questions or need help, we are of course here to help. You can contact us at support@example.com or through the contact form on the official website.
