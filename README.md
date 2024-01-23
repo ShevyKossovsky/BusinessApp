@@ -21,31 +21,7 @@ This application focuses on managing and upgrading the user experience of small 
 - **Staff management**: adding and managing employees and authorizing them.
 - **Analytical reports and data**: viewing reports and data that help in a better understanding of the business.
 
-## Contact Us
 
-If you have questions or need help, we are of course here to help. You can contact us at support@example.com or through the contact form on the official website.
-
-Good luck with using the app!
-The file describes the application, specifies main features and gives installation instructions. You should adapt the text to the characteristics of your application and add additional details that may be relevant.
-
-
-
-
-User
-Give me a formatted readme file
-which explains about an application for managing a small business
-The application displays two pages, one for users and one for the business owner himself (which requires identification through a username and password
-A)
-The user has the option to make appointments for the services he chooses
-And the business owner has options:
-Editing business details
-Adding a new service to the business
-View all scheduled meetings
-ChatGPT
-In order to create a formatted README file that explains an application for managing a small business with two pages, we will use Markdown to design the text. Here is an example of a README file:
-
-markdown
-Copy code
 # Application for managing a small business
 
 
@@ -70,10 +46,6 @@ This app is intended for small business owners and customers, and provides impor
 - **Adding a new service**: Adding a new service to the list of services that the business offers.
 - **viewing meetings**: he can see all the meetings scheduled with the business.
 
-## Installation
-
-1. **Download the app**: Install the app on your device.
-2. **Authentication**: Log in using a username and password.
 
 ## Contact Us
 
