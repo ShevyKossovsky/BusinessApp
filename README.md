@@ -7,19 +7,23 @@ Welcome to our application for managing and controlling a small business. The ap
 
 To run the project, follow these steps:
 
-1. **Install all dependencies:**
+1. **Download the project:**
+
+   Ensure that you have downloaded the project files from the repository.
+
+2. **Install all dependencies:**
 
     ```bash
     npm i
     ```
 
-2. **Run the project:**
+3. **Run the project:**
 
     ```bash
     npm run dev
     ```
 
-    Additionally, ensure that the server is running in parallel.
+    Make sure that the server is running in parallel.
 
 
 ## The purpose of the application
