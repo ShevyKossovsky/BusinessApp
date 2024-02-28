@@ -3,6 +3,25 @@
 
 Welcome to our application for managing and controlling a small business. The application provides two main pages: one for users and one for the business owner.
 
+### Instructions for Running the Project
+
+To run the project, follow these steps:
+
+1. **Install all dependencies:**
+
+    ```bash
+    npm i
+    ```
+
+2. **Run the project:**
+
+    ```bash
+    npm run dev
+    ```
+
+    Additionally, ensure that the server is running in parallel.
+
+
 ## The purpose of the application
 
 This application focuses on managing and upgrading the user experience of small business owners. Scheduling appointments, customer management, and monitoring the progress of the business - everything is available in an efficient and convenient way.
