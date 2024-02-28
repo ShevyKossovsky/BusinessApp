@@ -43,5 +43,5 @@ This application focuses on managing and upgrading the user experience of small 
 ## Contact Us
 
 If you have any questions, suggestions or additional requirements, we are of course here to help. We have a support team to help with any problem or question.
-s0556773361@gmail.com
+shevy0556773361@gmail.com
 Enjoying using the app!
