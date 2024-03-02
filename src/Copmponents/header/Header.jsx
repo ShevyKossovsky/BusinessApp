@@ -1,6 +1,5 @@
 import Button from '@mui/material/Button';
 import React, { useEffect } from 'react';
-import './header.css';
 import logo_image from '../../assets/images/save_logo.png';
 import CallIcon from '@mui/icons-material/Call';
 import businessStore from '../../stores/BusinessStore';
@@ -13,7 +12,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import Fab from '@mui/material/Fab';
 import EditDetails from '../editDetails/EditDetails';
 import BusinessStore from '../../stores/BusinessStore';
-
+import './header.css';
 
 const Header = (observer(() => {
     useEffect(() => {
