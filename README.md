@@ -9,6 +9,10 @@ To run the project, follow these steps:
 
 1. **Download the project:**
 
+    ```bash
+    git clone 
+    ```
+
    Ensure that you have downloaded the project files from the repository.
 
 2. **Install all dependencies:**
