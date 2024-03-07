@@ -10,7 +10,7 @@ To run the project, follow these steps:
 1. **Download the project:**
 
     ```bash
-    git clone 
+    git clone https://github.com/ShevyKossovsky/reactApp.git
     ```
 
    Ensure that you have downloaded the project files from the repository.
