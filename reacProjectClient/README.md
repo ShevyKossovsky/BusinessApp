@@ -1,9 +1,10 @@
-# Application for managing a small business
+# Small Business Management Application
 
+![Screenshot of the server project](../reacProjectClient/src/assets/images/screenShot.png)
 
 Welcome to our application for managing and controlling a small business. The application provides two main pages: one for users and one for the business owner.
 
-### Instructions for Running the Project
+## Instructions for Running the Project
 
 To run the project, follow these steps:
 
@@ -18,10 +19,16 @@ To run the project, follow these steps:
 2. **Install all dependencies:**
 
     ```bash
-    npm i
+    npm install
     ```
 
-3. **Run the project:**
+3. **Run the server:**
+
+    ```bash
+    npm start
+    ```
+
+4. **Run the project:**
 
     ```bash
     npm run dev
@@ -29,27 +36,28 @@ To run the project, follow these steps:
 
     Make sure that the server is running in parallel.
 
-
-## The purpose of the application
+## Purpose of the Application
 
 This application focuses on managing and upgrading the user experience of small business owners. Scheduling appointments, customer management, and monitoring the progress of the business - everything is available in an efficient and convenient way.
 
-## main features
+## Main Features
 
-## Users page
+### Users Page
 
-### Meetings with the service
+#### Appointments with the Service
 
 - **Making appointments**: The user can make appointments for the services he chooses.
 
-## Business owner page
+### Business Owner Page
 
 - **Editing the business details**: The business owner can edit the business details.
 - **Adding a new service**: Adding a new service to the list of services that the business offers.
-- **viewing meetings**: he can see all the meetings scheduled with the business.
+- **Viewing meetings**: He can see all the meetings scheduled with the business.
 
 ## Contact Us
 
-If you have any questions, suggestions or additional requirements, we are of course here to help. We have a support team to help with any problem or question.
+If you have any questions, suggestions, or additional requirements, we are, of course, here to help. We have a support team to help with any problem or question.
 shevy0556773361@gmail.com
-Enjoying using the app!
+Enjoy using the app!
+
+
