@@ -1,0 +1,11 @@
+/* Box{
+    position: fixed;
+} */
+#null{
+    height: 100px;
+}
+.wrapper{
+    width: 80%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.44);
+    margin-left: 20px;
+}
