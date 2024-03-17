@@ -1,4 +1,4 @@
-# Small Business Management Application
+# Business Management Application
 
 ![Screenshot of the server project](/reacProjectClient//src/assets/images/screenShot.png)
 
